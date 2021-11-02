@@ -1,0 +1,7 @@
+.values{
+    width: 2%;
+}
+
+.values:hover{
+    text-decoration: line-through;
+}

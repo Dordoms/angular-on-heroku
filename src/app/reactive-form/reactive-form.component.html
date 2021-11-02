@@ -1,0 +1,21 @@
+<h2>Ejercicio 2</h2>
+<hr>
+
+<div class="container">
+    <form (ngSubmit)="onSubmit()" [formGroup]="dataForm">
+        <label>Value</label>
+        <input type="text" formControlName="value" class="form-control" placeholder="Value..." />
+        <div class="text-center">
+            <button class="btn btn-primary mr-1" [disabled]="dataForm.invalid">Ingresar Dato</button>
+            <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancelar</button>
+        </div>
+    </form>
+</div>
+
+<body>
+    <ul>
+        <li *ngFor="let value of values">
+            <p class="values">{{value}}</p>
+        </li>
+    </ul>
+</body>
