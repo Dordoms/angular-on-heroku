@@ -1,9 +1,10 @@
 <h2>Ejercicio 2</h2>
 <hr>
 
+<!--Creo el formulario con un input y dos botones, uno para ingresar el dato y otro para limpiar el input-->
 <div class="container">
     <form (ngSubmit)="onSubmit()" [formGroup]="dataForm">
-        <label>Value</label>
+        <label><b>Value</b></label>
         <input title="Value" type="text" formControlName="value" class="form-control" placeholder="Value..." />
         <div class="text-center">
             <button class="btn btn-primary mr-1" [disabled]="dataForm.invalid">Ingresar Dato</button>
@@ -12,6 +13,7 @@
     </form>
 </div>
 
+<!--Lista donde se muestran los datos que el usuario va ingresando-->
 <body>
     <ul>
         <li *ngFor="let value of values">

@@ -7,8 +7,8 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   styleUrls: ['./reactive-form.component.css']
 })
 export class ReactiveFormComponent implements OnInit {
+  /*Creo un FormGroup para almacenar los datos que envie el usuario*/
   dataForm!: FormGroup;
-
   values: Array<String> = [];
 
   constructor(private formBuilder: FormBuilder) { }
@@ -22,11 +22,9 @@ export class ReactiveFormComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.dataForm.invalid) {
-      return;
-    }
-      this.values[this.values.length] = this.dataForm.value.value;
-      this.onReset();
+    /*Agrego el dato que ingreso el usuario al array*/
+    this.values[this.values.length] = this.dataForm.value.value;
+    this.onReset();
   }
 
   onReset() {
