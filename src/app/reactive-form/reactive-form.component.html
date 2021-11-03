@@ -7,13 +7,14 @@
         <label><b>Value</b></label>
         <input title="Value" type="text" formControlName="value" class="form-control" placeholder="Value..." />
         <div class="text-center">
-            <button class="btn btn-primary mr-1" [disabled]="dataForm.invalid">Ingresar Dato</button>
+            <button class="btn btn-primary mr-1" [disabled]="dataForm.invalid">Agregar</button>
             <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancelar</button>
         </div>
     </form>
 </div>
 
 <!--Lista donde se muestran los datos que el usuario va ingresando-->
+<h3>Lista de valores ingresados</h3>
 <body>
     <ul>
         <li *ngFor="let value of values">
