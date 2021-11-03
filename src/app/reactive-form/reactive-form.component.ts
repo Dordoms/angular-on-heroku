@@ -10,6 +10,7 @@ export class ReactiveFormComponent implements OnInit {
   /*Creo un FormGroup para almacenar los datos que envie el usuario*/
   dataForm!: FormGroup;
   values: Array<String> = [];
+  clicked: boolean = false;
 
   constructor(private formBuilder: FormBuilder) { }
 
@@ -29,6 +30,14 @@ export class ReactiveFormComponent implements OnInit {
 
   onReset() {
     this.dataForm.reset();
+  }
+
+  click() {
+    if (!this.clicked) {
+      this.clicked = true;
+    } else {
+      this.clicked = false;
+    }
   }
 
 }
