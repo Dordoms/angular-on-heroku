@@ -2,6 +2,10 @@
     width: 2%;
 }
 
+.btn{
+    margin-top: 2%;
+}
+
 .values:hover{
     text-decoration: line-through;
 }
