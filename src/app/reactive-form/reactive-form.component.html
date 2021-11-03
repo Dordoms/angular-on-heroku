@@ -4,7 +4,7 @@
 <div class="container">
     <form (ngSubmit)="onSubmit()" [formGroup]="dataForm">
         <label>Value</label>
-        <input type="text" formControlName="value" class="form-control" placeholder="Value..." />
+        <input title="Value" type="text" formControlName="value" class="form-control" placeholder="Value..." />
         <div class="text-center">
             <button class="btn btn-primary mr-1" [disabled]="dataForm.invalid">Ingresar Dato</button>
             <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancelar</button>
