@@ -6,6 +6,10 @@
     width: 2%;
 }
 
-.values:hover{
+.values:active{
     text-decoration: line-through;
+}
+
+.values:hover{
+    cursor: pointer;
 }
