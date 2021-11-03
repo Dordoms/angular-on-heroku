@@ -10,14 +10,18 @@ export class ReactiveFormComponent implements OnInit {
   /*Creo un FormGroup para almacenar los datos que envie el usuario*/
   dataForm!: FormGroup;
   values: Array<String> = [];
-  clicked: boolean = false;
+  clickedValues: Array<boolean> = [];
+
+  finish: boolean = false;
+  count: number = 0;
 
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
     this.dataForm = this.formBuilder.group(
       {
-        value: ["", Validators.required]
+        value: ["", Validators.required],
+        clicked: [false]
       }
     );
   }
@@ -25,6 +29,7 @@ export class ReactiveFormComponent implements OnInit {
   onSubmit() {
     /*Agrego el dato que ingreso el usuario al array*/
     this.values[this.values.length] = this.dataForm.value.value;
+    this.clickedValues[this.clickedValues.length] = this.dataForm.value.clicked;
     this.onReset();
   }
 
@@ -32,11 +37,11 @@ export class ReactiveFormComponent implements OnInit {
     this.dataForm.reset();
   }
 
-  click() {
-    if (!this.clicked) {
-      this.clicked = true;
+  click(value: String) {
+    if (!this.clickedValues[this.values.indexOf(value)]) {
+      this.clickedValues[this.values.indexOf(value)] = true;
     } else {
-      this.clicked = false;
+      this.clickedValues[this.values.indexOf(value)] = false;
     }
   }
 
