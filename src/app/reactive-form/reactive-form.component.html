@@ -15,10 +15,12 @@
 
 <!--Lista donde se muestran los datos que el usuario va ingresando-->
 <h3>Lista de valores ingresados</h3>
+
 <body>
     <ul>
         <li *ngFor="let value of values">
-            <p [style.text-decoration]="clickedValues[values.indexOf(value)] ? 'line-through':'none'" (click)="click(value)" class="values">{{value}}</p>
+            <p [style.text-decoration]="clickedValues[values.indexOf(value)] ? 'line-through':'none'"
+                (click)="click(value)" class="values">{{value}}</p>
         </li>
     </ul>
 </body>
